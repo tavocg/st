@@ -424,7 +424,11 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,        {.i =  0} },
 	{ TERMMOD,              XK_Prior,       zoom,            {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,            {.f = -1} },
+	{ ControlMask,          XK_equal,       zoom,            {.f = +1} },
+	{ ControlMask|ShiftMask,XK_plus,        zoom,            {.f = +1} },
+	{ ControlMask,          XK_minus,       zoom,            {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,       {.f =  0} },
+	{ ControlMask,          XK_0,           zoomreset,       {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,       {.i =  0} },
 	#if ALPHA_PATCH
@@ -442,6 +446,8 @@ static Shortcut shortcuts[] = {
 	#if SCROLLBACK_PATCH || REFLOW_PATCH
 	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = -1}, S_PRI },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1}, S_PRI },
+	{ TERMMOD,              XK_K,           kscrollup,       {.i =  1}, S_PRI },
+	{ TERMMOD,              XK_J,           kscrolldown,     {.i =  1}, S_PRI },
 	#endif // SCROLLBACK_PATCH || REFLOW_PATCH
 	#if CLIPBOARD_PATCH
 	{ TERMMOD,              XK_Y,           clippaste,       {.i =  0} },
